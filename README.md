@@ -1,57 +1,29 @@
-# BlockChain_Exchange
+# CEX
+A lightweight JavaScript library for making cryptocurrency exchange rate queries.
 
-This is exchange site for ethereum
+## What it does
+CEX allows you to easily retrieve current and historical exchange rates for various cryptocurrencies. It supports multiple exchanges and provides a simple, unified API.
 
-## Welcome Everyone
+## Installation
+To install CEX, run:
+```bash
+npm install cex-js
+```
+## Usage
+Here's a quick example of how to use CEX:
+```javascript
+const CEX = require('cex-js');
 
-![Screen shot](./doc/Capture.PNG)
+const cex = new CEX();
+cex.getRate('BTC', 'USD')
+  .then(rate => console.log(`1 BTC = ${rate} USD`))
+  .catch(error => console.error(error));
+```
+This code creates a new CEX instance and retrieves the current BTC/USD exchange rate.
 
-## Recommanded development environment
-
-- Node.js 14.15.0
-- truffle
-- ganache
-- web3.js
-
-## Skill
-
-- Node.js
-- Solidity smart contract
-- Web3
-- React
-
-## How to run this code
-
-- $ truffle complile
-- $ truffle migrage --network development --reset
-
-## Run test net
-
-You should run Ganache
-
-## Install NPM modules
-
-- $ yarn install
-- $ yarn start
-
-## Visit your site
-
-http://localhost:3000
-
-## Extra
-
-You must run ganache before you run website
-
-### Default login
-
-- username : ccc@gmail.com
-- password : 123123
-- This is the login information on firebase
-- you cant login without firebase database.
-
-1. run 'npm install --force'
-2. open ganache and run with 0 gas price
-3. run truffle migrate
-4. copy src/abis/token.json and token2.json to src/store/interactions/tokens
-5. copy src/abis/exchange.json and exchange2.json to /src/interactions/exchange
-6. npm start, login create account
+## Running the tests
+If you want to run the tests, you'll need to install the dependencies and then run:
+```bash
+npm test
+```
+Make sure you have Node.js and npm installed on your system. That's it! If you have any questions or find a bug, don't hesitate to open an issue.
